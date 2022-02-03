@@ -28,41 +28,29 @@ public class CalculatorController implements Calculator {
             else {
                 switch (num){
                     case "+":
-                        try {
+
                             num1 = equationStack.remove() + equationStack.remove();
                             equationStack.add(num1);
-                        } catch (Exception e){
-                            System.out.println("Hacen falta números para completar la operación");
-                            break loop;
-                        }
                         break;
                     case "*":
-                        try{
                             num1 = equationStack.remove() * equationStack.remove();
                             equationStack.add(num1);
-                        } catch (Exception e){
-                            System.out.println("Hacen falta números para completar la operación");
-                            break loop;
-                        }
                         break;
                     case "-":
-                        try{
                             num1 = equationStack.remove() - equationStack.remove();
                             equationStack.add(num1);
-                        } catch (Exception e){
-                            System.out.println("Hacen falta números para completar la operación");
-                            break loop;
-                        }
                         break;
                     case "/":
-                        try{
                             double num2 = equationStack.remove();
-                            num1 = equationStack.remove()/num2;
-                            equationStack.add(num1);
-                        } catch (Exception e){
-                            System.out.println("Hacen falta números para completar la operación");
-                            break loop;
-                        }
+                            if (num2 == 0) {
+                                System.out.println("No existe la división entre 0");
+                                num1 = equationStack.remove()/num2;
+                                equationStack.add(num1);
+                                break loop;
+                            }
+                                num1 = equationStack.remove()/num2;
+                                equationStack.add(num1);
+
                         break;
                     default:
                         System.out.println("Se ha ingresado un signo no válido");
@@ -72,7 +60,7 @@ public class CalculatorController implements Calculator {
         }
         if(equationStack.size()>1 || equationStack.empty()) {
             System.out.println("No se ha ingresado una operación válida");
-            return 0;
-        } else return equationStack.remove();
+        }
+        return equationStack.remove();
     }
 }

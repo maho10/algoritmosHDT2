@@ -84,12 +84,17 @@ public class Main {
 		System.out.println("--------------------------------------------POSTFIX CALCULATOR--------------------------------------------");
 		System.out.println(" ");
 		System.out.print("Ingresa la direccion del archivo de texto donde se encuentra la operacion (Ej: C:\\Users\\fulanito\\ops.txt) -> ");
-		
-		String url = in.nextLine();
-		in.close();
-		leerTexto(url);
-		calcular();
-		imprimirResultados();
+
+		try{
+			String url = in.nextLine();
+			in.close();
+			leerTexto(url);
+			calcular();
+			imprimirResultados();
+		} catch (Exception e){
+			System.out.println("No se ingresó una operación válida");
+		}
+
 		
 		
 	}
