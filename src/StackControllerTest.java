@@ -29,7 +29,7 @@ class StackControllerTest {
     void size(){
         sc.add(5.0);
         sc.add(4.0);
-        assertEquals(4,sc.size(),"Hay un error al obtener el tamaño del objeto del stack");
+        assertEquals(2,sc.size(),"Hay un error al obtener el tamaño del objeto del stack");
     }
 
     @Test
