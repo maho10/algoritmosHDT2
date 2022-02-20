@@ -1,9 +1,14 @@
-import java.util.Vector;
+package controllers.stacks;
 
-public class StackController<E> implements Stack<E>{
+import controllers.lists.ListFactory;
+import controllers.lists.Lists;
 
-    protected Vector<E> stack;
 
+public class StackControllerList<E> implements Stack<E>{
+
+    String type = "Sinlgy";
+    private ListFactory<E> list = new ListFactory<>();
+    private Lists<E> stack = list.getList(type);
 
     @Override
     public void add(E item) {
@@ -12,7 +17,9 @@ public class StackController<E> implements Stack<E>{
 
     @Override
     public E remove() {
-        return stack.remove(size()-1);
+        E last = stack.get(size() - 1);
+        stack.remove(size()-1);
+        return last;
     }
 
     @Override
@@ -37,7 +44,7 @@ public class StackController<E> implements Stack<E>{
         return size() == 0;
     }
 
-    public StackController() {
-        stack = new Vector<E>();
+    public StackControllerList(String type) {
+        Lists<E> stack = list.getList(type);
     }
 }

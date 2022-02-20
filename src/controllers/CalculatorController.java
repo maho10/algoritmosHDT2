@@ -1,12 +1,11 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Vector;
+package controllers;
+
+import controllers.stacks.StackControllerVector;
 
 public class CalculatorController implements Calculator {
 
     private static CalculatorController instance = new CalculatorController();
-    private StackController<Double> equationStack = new StackController<>();
+    private StackControllerVector<Double> equationStack = new StackControllerVector<>();
 
     private CalculatorController(){}
     public static CalculatorController getInstance(){

@@ -1,9 +1,12 @@
+package tests;
+
+import controllers.stacks.StackControllerVector;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class StackControllerTest {
-    private final StackController<Double> sc = new StackController<>();
+class StackControllerVectorTest {
+    private final StackControllerVector<Double> sc = new StackControllerVector<>();
     //double sc;
     @Test
     void add() {
