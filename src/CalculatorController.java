@@ -5,7 +5,13 @@ import java.util.Vector;
 
 public class CalculatorController implements Calculator {
 
+    private static CalculatorController instance = new CalculatorController();
     private StackController<Double> equationStack = new StackController<>();
+
+    private CalculatorController(){}
+    public static CalculatorController getInstance(){
+        return instance;
+    }
 
     @Override
     public double calculate(String operation) {

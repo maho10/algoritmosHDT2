@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorControllerTest {
-    private final CalculatorController cc = new CalculatorController();
+    private final CalculatorController cc = CalculatorController.getInstance();
 
     @Test
     void calculate() {

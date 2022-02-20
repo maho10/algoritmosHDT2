@@ -8,7 +8,7 @@ public class Main {
 	
 	static String[] operaciones = {};
 	static double resultados[] = {};
-	static CalculatorController calculator = new CalculatorController();
+	static CalculatorController calculator = CalculatorController.getInstance();
 	
 	static void nuevaOperacion(String text) {
 		
