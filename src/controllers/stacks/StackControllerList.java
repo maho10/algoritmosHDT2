@@ -6,9 +6,8 @@ import controllers.lists.Lists;
 
 public class StackControllerList<E> implements Stack<E>{
 
-    String type = "Sinlgy";
     private ListFactory<E> list = new ListFactory<>();
-    private Lists<E> stack = list.getList(type);
+    private Lists<E> stack;
 
     @Override
     public void add(E item) {
@@ -44,7 +43,7 @@ public class StackControllerList<E> implements Stack<E>{
         return size() == 0;
     }
 
-    public StackControllerList(String type) {
-        Lists<E> stack = list.getList(type);
+    public StackControllerList(boolean type) {
+        stack = list.getList(type);
     }
 }
