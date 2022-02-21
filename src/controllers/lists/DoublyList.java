@@ -6,7 +6,7 @@
 
 package controllers.lists;
 
-public class DoublyList<E> implements Lists<E>{
+public class DoublyList<E> extends ListsMethods<E> implements Lists<E>{
 
     class Node{
         E data;
@@ -18,7 +18,7 @@ public class DoublyList<E> implements Lists<E>{
         }
     }
 
-    Node head, tail = null;
+    private Node head, tail = null;
 
     @Override
     public void add(E data) {
@@ -35,55 +35,4 @@ public class DoublyList<E> implements Lists<E>{
             newNode.previous = temp;
         }
     }
-
-    @Override
-    public E get(int position) {
-        if(this.head != null) {
-            if(this.head.next == null) {
-                return this.head.data;
-            } else {
-                Node temp = this.head;
-                while(temp.next.next != null)
-                    temp = temp.next;
-                return temp.next.data;
-            }
-        } else {
-            return null;
-        }
-    }
-
-    @Override
-    public void remove(int position) {
-        if(this.head != null) {
-
-            if(this.head.next == null) {
-                this.head = null;
-            } else {
-
-                Node temp = this.head;
-                while(temp.next.next != null)
-                    temp = temp.next;
-
-                Node lastNode = temp.next;
-                temp.next = null;
-                lastNode = null;
-            }
-        }
-    }
-
-    @Override
-    public int size() {
-        Node current = head;
-        int size = 0;
-
-        if(head == null) {
-            return 0;
-        }
-        while(current != null) {
-            size += 1;
-            current = current.next;
-        }
-        return size;
-    }
-
 }

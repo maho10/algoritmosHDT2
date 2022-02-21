@@ -4,9 +4,9 @@ public interface Lists<E>  {
 
     public void add(E data);
 
-    public E get(int position);
+    public E get();
 
-    public void remove(int position);
+    public void remove();
 
     public int size();
 

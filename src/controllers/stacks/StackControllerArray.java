@@ -3,7 +3,7 @@ package controllers.stacks;
 
 import java.util.ArrayList;
 
-public class StackControllerArray<E> implements Stack<E> {
+public class StackControllerArray<E> extends StackMethods<E> implements Stack<E> {
 
     protected ArrayList<E> stack;
 
@@ -31,13 +31,6 @@ public class StackControllerArray<E> implements Stack<E> {
     // post: returns the number of elements in the stack
     {
         return stack.size();
-    }
-
-    @Override
-    public boolean empty()
-    // post: returns true if and only if the stack is empty
-    {
-        return size() == 0;
     }
 
     public StackControllerArray() {

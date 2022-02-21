@@ -2,7 +2,7 @@ package controllers.stacks;
 
 import java.util.Vector;
 
-public class StackControllerVector<E> implements Stack<E> {
+public class StackControllerVector<E> extends StackMethods<E> implements Stack<E> {
 
     protected Vector<E> stack;
 
@@ -30,13 +30,6 @@ public class StackControllerVector<E> implements Stack<E> {
     // post: returns the number of elements in the stack
     {
         return stack.size();
-    }
-
-    @Override
-    public boolean empty()
-    // post: returns true if and only if the stack is empty
-    {
-        return size() == 0;
     }
 
     public StackControllerVector() {
