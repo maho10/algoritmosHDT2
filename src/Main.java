@@ -70,6 +70,8 @@ public class Main {
 		System.out.println(" ");
 		System.out.println("------------------------------------------------RESULTADOS------------------------------------------------");
 		System.out.println(" ");
+		System.out.println("Tipo de stack empleado: " + InfixPostfix.stack.getClass());
+		System.out.println(" ");
 		for (int i = 0; i < resultados.length; i++) {
 			
 			System.out.println("El resultado de la operacion " + i+1 +" es " + resultados[i]);
@@ -81,21 +83,27 @@ public class Main {
 	public static void prompt() {
 		
 		
-		Scanner in = new Scanner(System.in);
+		Scanner input = new Scanner(System.in);
 		
 		System.out.println("--------------------------------------------POSTFIX CALCULATOR--------------------------------------------");
 		System.out.println(" ");
-		System.out.print("Ingresa la direccion del archivo de texto donde se encuentra la operacion (Ej: C:\\Users\\fulanito\\ops.txt) -> ");
+		System.out.print("Ingresa la direccion del archivo de texto INFIX (Ej: C:\\Users\\fulanito\\datos.txt) -> ");
 
+		
 		try{
-			String url = in.nextLine();
-			in.close();
-			leerTexto(url);
+			String direccion = input.nextLine();
+			
+			InfixPostfix.leerDatosInfix(direccion);
+			
+			InfixPostfix.printPostFix("datosPF.txt");
+			leerTexto("datosPF.txt");
 			calcular();
 			imprimirResultados();
-		} catch (Exception e){
-			System.out.println("No se ingresó una operación válida");
-		}
+			
+			} catch (Exception e){
+				e.printStackTrace();
+				System.out.println("No se ingreso una operacion valida");
+			}
 
 		
 		
@@ -107,11 +115,9 @@ public class Main {
 	
 	public static void main(String args[]) {
 		
-		
+		InfixPostfix.seleccionEstructura();
 		
 		prompt();
-		
-		
 		
 	}
 	
