@@ -5,13 +5,18 @@ public abstract class ListsMethods<E> {
     class Node{
         E data;
         Node next;
+        Node previous;
 
         public Node(E data) {
             this.data = data;
         }
     }
 
-    private Node head, tail = null;
+    Node head = null;
+
+    public void setHead(Node head) {
+        this.head = head;
+    }
 
     public E get() {
         if(this.head != null) {

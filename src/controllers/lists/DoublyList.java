@@ -8,18 +8,6 @@ package controllers.lists;
 
 public class DoublyList<E> extends ListsMethods<E> implements Lists<E>{
 
-    class Node{
-        E data;
-        Node previous;
-        Node next;
-
-        public Node(E data) {
-            this.data = data;
-        }
-    }
-
-    private Node head, tail = null;
-
     @Override
     public void add(E data) {
         Node newNode = new Node(data);

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorControllerTest {
-    private final CalculatorController cc = CalculatorController.getInstance();
+    private final CalculatorController cc = CalculatorController.getInstance(1);
 
     @Test
     void calculate() {

@@ -1,15 +1,22 @@
 package controllers;
 
+import controllers.stacks.Stack;
 import controllers.stacks.StackControllerVector;
+import controllers.stacks.StackFactory;
 
 public class CalculatorController implements Calculator {
+    private static int type;
+    private static CalculatorController instance = new CalculatorController(type);
+    private StackFactory<Double> stack = new StackFactory<>();
+    private Stack<Double> equationStack;
 
-    private static CalculatorController instance = new CalculatorController();
-    private StackControllerVector<Double> equationStack = new StackControllerVector<>();
-
-    private CalculatorController(){}
-    public static CalculatorController getInstance(){
+    public static CalculatorController getInstance(int type){
+        CalculatorController.type = type;
         return instance;
+    }
+
+    private CalculatorController(int type) {
+        equationStack = stack.getStack(2);
     }
 
     @Override

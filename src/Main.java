@@ -10,7 +10,7 @@ public class Main {
 	
 	static String[] operaciones = {};
 	static double resultados[] = {};
-	static CalculatorController calculator = CalculatorController.getInstance();
+	static CalculatorController calculator = CalculatorController.getInstance(InfixPostfix.stackType());
 	
 	static void nuevaOperacion(String text) {
 		

@@ -18,7 +18,7 @@ public class InfixPostfix {
 	static String[] operaciones = {};
 	static String[] opsPF = {};
 	static ArrayList<String> PostFix = new ArrayList<>();
-	
+	private static int sel;
 	
 	static StackFactory<String> factory = new StackFactory<String>();
 	static  Stack<String> stack;
@@ -143,7 +143,6 @@ public class InfixPostfix {
 						PostFix.add(ch);
 						
 						
-						
 					} else if( ch.equals("+") || ch.equals("-") || ch.equals("*") || ch.equals("/")) {
 						
 						if (stack.size() == 0) {
@@ -164,7 +163,6 @@ public class InfixPostfix {
 								
 								stack.add(ch);
 								
-								
 							}
 							
 						}
@@ -175,7 +173,7 @@ public class InfixPostfix {
 						stack.add(ch);
 						
 					} else if (ch.equals(")")) {
-						
+
 						while (!stack.peek().equals( "(")) {
 							
 							PostFix.add(stack.peek());
@@ -230,7 +228,7 @@ public class InfixPostfix {
 		System.out.print(" SELECCION -> ");
 
 		try{
-			int sel = in.nextInt();
+			sel = in.nextInt();
 			
 			stack = factory.getStack(sel);
 			
@@ -243,6 +241,7 @@ public class InfixPostfix {
 			}
 	
 	}
+	public static int stackType(){ return sel;}
 	
 	
 	
