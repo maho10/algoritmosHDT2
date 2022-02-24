@@ -21,7 +21,6 @@ public class SinglyList<E> extends ListsMethods<E> implements Lists<E>{
                 temp = temp.next;
             temp.next = newNode;
         }
-        System.out.println(head);
     }
 
 }
