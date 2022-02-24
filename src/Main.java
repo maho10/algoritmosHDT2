@@ -74,7 +74,7 @@ public class Main {
 		System.out.println(" ");
 		for (int i = 0; i < resultados.length; i++) {
 			
-			System.out.println("El resultado de la operacion " + i+1 +" es " + resultados[i]);
+			System.out.println("El resultado de la operacion " + (i+1) +" es " + resultados[i]);
 		}
 		
 	}
